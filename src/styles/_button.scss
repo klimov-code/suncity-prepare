@@ -1,0 +1,48 @@
+.btn {
+  background: none;
+  border: none;
+
+  display: block;
+  position: relative;
+
+  padding: $space-xxs $space-md;
+  min-width: 210px;
+  height: 40px;
+
+  border-radius: 4px;
+
+  @include rfs(1rem, font-size);
+  font-family: $font-primary, $font-secondary;
+  font-weight: 700;
+  line-height: 1;
+
+  color: $colorBlack;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: 0.2s;
+
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:active {
+    transition: none;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--primary {
+    background-color: $colorSunCity;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+      background-color: $colorPressed;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+$font-primary: 'Lato';
+$font-secondary: sans-serif;
+
+$base-text-size: 14px;
+
+:root {
+  font-family: $font-primary, $font-secondary;
+  font-size: $base-text-size;
+  font-weight: 400;
+  color: $colorBlack;
+
+  box-sizing: border-box;
+}
+
+h1,
+.h1 {
+  @include rfs(1.286rem, font-size);
+  line-height: 1.39;
+}
+
+h2,
+.h2 {
+  @include rfs(1.143rem, font-size);
+  line-height: 1.37;
+}
+
+h3,
+.h3 {
+  @include rfs(1rem, font-size);
+  line-height: 1.5;
+}
+
+h4,
+.h4 {
+  @include rfs(0.86rem, font-size);
+  line-height: 1.33;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.caption {
+  @include rfs(0.93rem, font-size);
+  line-height: 1.62;
+
+  &--small {
+    @include rfs(0.86rem, font-size);
+    line-height: 1.33;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+}
+
+.menu__item {
+  @include rfs(0.715rem, font-size);
+  line-height: 1.5;
+}
+
+.chat__name {
+  @include rfs(1.07rem, font-size);
+  font-weight: 700;
+  list-style: 1.6;
+}
+
+.chat__preview {
+  @include rfs(0.93rem, font-size);
+  line-height: 1.46;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "suncity",
+  "version": "0.0.1",
+  "description": "suncity frontend",
+  "main": "src/pages/*.pug",
+  "author": "Ilya Klimov <therapyspb@yandex.ru>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "parcel ./src/pages/**/*.pug --no-autoinstall --open --no-source-maps",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build ./src/pages/**/*.pug --no-source-maps"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "pug": "^2.0.4",
+    "rfs": "^9.0.0",
+    "sass": "^1.22.12"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.6.1",
+    "postcss-modules": "^1.4.1"
+  }
+}

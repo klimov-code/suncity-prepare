@@ -1,0 +1,26 @@
+.form {
+  padding: $space-md $space-xs;
+  width: 100%;
+
+  background-color: $colorBg;
+
+  box-sizing: border-box;
+
+  &__header {
+    font-size: 30px;
+    font-weight: 900;
+
+    margin: 0 0 $space-xl;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__label {
+  }
+
+  &__input {
+    @include input;
+  }
+}

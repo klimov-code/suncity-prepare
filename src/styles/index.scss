@@ -1,0 +1,14 @@
+@import '~rfs/scss';
+
+@import './spacing';
+@import './colors';
+@import './typography';
+@import './button';
+
+@import './mixins';
+@import './form';
+
+body {
+  margin: 0;
+  padding: 0;
+}
