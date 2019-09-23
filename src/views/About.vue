@@ -1,12 +1,6 @@
-head
-  meta(charset="UTF-8")
-  meta(name="viewport", content="width=device-width, initial-scale=1.0")
-  meta(http-equiv="X-UA-Compatible", content="ie=edge")
-  title Login
-  link(rel="stylesheet", href="/../styles/index.scss")
-  link(rel="stylesheet", href="index.scss")
-body
-  img.bg-image(alt="Страница входа", srcset="/../assets/login.jpg")
+<template lang="pug">
+div
+  img.bg-image(alt="Страница входа", srcset="../assets/login.jpg")
 
   form.form
     h1.form__header Люди, которым можно довериться
@@ -22,3 +16,26 @@ body
   
     span.caption Еще не успели стать волонтером?
     a(href="#") Заполните анкету
+</template>
+
+<script>
+export default {
+  name: "Login"
+};
+</script>
+
+<style lang="scss" scoped>
+.bg-image {
+  width: 100%;
+}
+
+.form {
+  position: fixed;
+  bottom: 0;
+
+  height: 440px;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+</style>
