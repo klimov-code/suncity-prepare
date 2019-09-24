@@ -20,7 +20,20 @@ div
 
 <script>
 export default {
-  name: "Login"
+  name: "Login",
+  data: () => ({
+    messages: [],
+    textMessage: ""
+  }),
+  mounted() {
+    window.Echo.channel("global").listen(
+      "GlobalNotification",
+      ({ message }) => {
+        console.log(message);
+        this.messages.push(message);
+      }
+    );
+  }
 };
 </script>
 
