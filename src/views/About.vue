@@ -26,13 +26,10 @@ export default {
     textMessage: ""
   }),
   mounted() {
-    window.Echo.channel("global").listen(
-      "GlobalNotification",
-      ({ message }) => {
-        console.log(message);
-        this.messages.push(message);
-      }
-    );
+    window.Echo.channel("global").listen("GlobalNotification", global => {
+      console.log(global);
+      this.messages.push(global);
+    });
   }
 };
 </script>
