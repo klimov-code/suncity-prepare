@@ -1,13 +1,43 @@
 @mixin input {
   border: none;
+  outline: none;
 
   padding: $space-xxs $space-xs;
-  width: 100%;
-  height: 40px;
 
-  font-size: 1rem;
+  @include rfs(1rem, font-size);
   line-height: 1.57;
 
   background-color: $colorTextInput;
   border-radius: 4px;
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    border-color: #3ec25f;
+    box-shadow: 0 0 6px -2px #9ee0ae;
+  }
+
+  &::placeholder {
+    font-family: 'Lato';
+    font-size: 1rem;
+
+    color: #bbbcc2;
+  }
+
+  &:disabled {
+    user-select: none;
+    cursor: not-allowed;
+
+    background-color: #f7f8fa;
+    color: #9fa0aa;
+  }
+
+  &--error {
+    border-color: #eb0909;
+
+    &:focus,
+    &:active {
+      border-color: #eb0909;
+      box-shadow: 0 0 6px -2px #f58282;
+    }
+  }
 }

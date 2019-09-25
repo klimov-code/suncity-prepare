@@ -5,12 +5,22 @@ div
   form.form
     h1.form__header Люди, которым можно довериться
 
-    div.form__item
-      label.form__label(for="login") Адрес электронной почты
-      input#login.form__input(type="text", name="login")
-    div.form__item
-      label.form__label(for="password") Пароль
-      input#password.form__input(type="password", name="password")
+    div.form__item.item
+      label.item__label(for="login") Адрес электронной почты
+      input#login.item__input(type="text", name="login")
+    div.form__item.item
+      label.item__label(for="password") Пароль
+      input#password.item__input(type="password", name="password")
+    div.form__item.item
+      label
+        input#checkbox.item__checkbox(type="checkbox")
+        div.box
+        span.text 123456654321
+    div.form__item.item
+      label
+        input.item__radiobox(type="radio")
+        div.box
+        span.text 123456654321
     
     button.form__submit.btn.btn--primary.btn--full-width(type="button") Войти
   
@@ -27,7 +37,7 @@ export default {
   }),
   mounted() {
     window.Echo.channel("global").listen("GlobalNotification", global => {
-      console.log(global);
+      console.log(123, global);
       this.messages.push(global);
     });
   }

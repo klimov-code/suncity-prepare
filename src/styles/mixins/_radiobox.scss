@@ -1,0 +1,82 @@
+@import './visuallyhidden';
+
+@mixin radiobox {
+  @include visuallyhidden;
+
+  & + .box {
+    position: absolute;
+
+    @include rfs(1.286rem, width);
+    @include rfs(1.286rem, height);
+
+    overflow: hidden;
+
+    border: 1px solid $colorIconSecondary;
+    border-radius: 50%;
+
+    background: #fff 50% 50% no-repeat;
+
+    &--small {
+      @include rfs(1rem, width);
+      @include rfs(1rem, height);
+    }
+  }
+
+  &:disabled {
+    user-select: none;
+    cursor: not-allowed;
+  }
+
+  &:checked + .box {
+    border-color: $colorSunCity;
+
+    background-color: $colorSunCity;
+    background-image: url('./assets/icons/checkbox.svg');
+    background-size: 13px;
+
+    &--small {
+      background-size: 8px;
+    }
+  }
+
+  &:focus + .box,
+  &:hover + .box {
+    cursor: pointer;
+  }
+
+  &:disabled + .box {
+    cursor: not-allowed;
+
+    background-color: #f0f1f3;
+  }
+
+  &:checked:disabled + .box {
+    border-color: #dcdde1;
+
+    background: radial-gradient(
+      circle at 50% 50%,
+      #bec0ca 50%,
+      #f0f1f3 51%,
+      #f0f1f3 100%
+    );
+  }
+
+  & ~ .text {
+    display: block;
+    padding-left: 2.286rem;
+
+    user-select: none;
+    cursor: pointer;
+
+    font-size: 0.93rem;
+    font-weight: 400;
+    line-height: 1.383;
+    color: #303035;
+  }
+
+  &:disabled ~ .text {
+    cursor: not-allowed;
+
+    color: #9fa0aa;
+  }
+}

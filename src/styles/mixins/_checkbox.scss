@@ -1,0 +1,76 @@
+@import './visuallyhidden';
+
+@mixin checkbox {
+  @include visuallyhidden;
+
+  & + .box {
+    position: absolute;
+
+    @include rfs(1.286rem, width);
+    @include rfs(1.286rem, height);
+
+    overflow: hidden;
+
+    border: 1px solid $colorIconSecondary;
+    border-radius: 3px;
+
+    background: #fff 50% 50% no-repeat;
+
+    &--small {
+      @include rfs(1rem, width);
+      @include rfs(1rem, height);
+    }
+  }
+
+  &:disabled {
+    user-select: none;
+    cursor: not-allowed;
+  }
+
+  &:checked + .box {
+    border-color: $colorSunCity;
+
+    background-color: $colorSunCity;
+    background-image: url('./assets/icons/checkbox.svg');
+    background-size: 13px;
+
+    &--small {
+      background-size: 8px;
+    }
+  }
+
+  &:focus + .box,
+  &:hover + .box {
+    cursor: pointer;
+  }
+
+  &:disabled + .box {
+    user-select: none;
+    cursor: not-allowed;
+
+    background-color: #f0f1f3;
+  }
+
+  &:disabled:checked + .box {
+    border-color: #dcdde1;
+
+    // background-image: url('./assets/icons/checkbox-disabled.svg');
+  }
+
+  & ~ .text {
+    cursor: pointer;
+    margin-left: 1.786rem;
+
+    font-size: 0.93rem;
+    font-weight: 400;
+
+    color: #303035;
+  }
+
+  &:disabled ~ .text {
+    user-select: none;
+    cursor: not-allowed;
+
+    color: #9fa0aa;
+  }
+}

@@ -3,15 +3,6 @@ $font-secondary: sans-serif;
 
 $base-text-size: 14px;
 
-:root {
-  font-family: $font-primary, $font-secondary;
-  font-size: $base-text-size;
-  font-weight: 400;
-  color: $colorBlack;
-
-  box-sizing: border-box;
-}
-
 h1,
 .h1 {
   @include rfs(1.286rem, font-size);

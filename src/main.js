@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Echo from "laravel-echo";
-import io from "socket.io-client";
+import Pusher from "pusher-js";
 
 import App from "./App.vue";
 import "./registerServiceWorker";
@@ -9,11 +9,14 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
-window.io = io;
+window.Pusher = Pusher;
 
 window.Echo = new Echo({
-  broadcaster: "socket.io",
-  host: `${window.location.hostname}:6001`
+  broadcaster: "pusher",
+  key: "fakekey",
+  cluster: "123",
+  wsHost: "docker.vkreview.ru",
+  wsPort: 6001
 });
 
 new Vue({

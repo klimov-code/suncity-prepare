@@ -1,14 +1,28 @@
 @import '~rfs/scss';
 
+@import './fonts';
 @import './spacing';
 @import './colors';
+
 @import './typography';
 @import './button';
 
 @import './mixins';
 @import './form';
 
-body {
+:root {
+  font-family: $font-primary, $font-secondary, 'Avenir', Helvetica, Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $base-text-size;
+  font-weight: 400;
+
+  color: $colorBlack;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
